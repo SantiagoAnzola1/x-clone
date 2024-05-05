@@ -25,7 +25,7 @@ export default function PostCard({
             <CardHeader className="justify-between">
                 <div className="flex gap-2">
                     <Link href={`/${userName}`}>
-                        <Avatar size="md" src={avatarUrl.replace(/['"]+/g, '')} />
+                        <Avatar size="md" src={avatarUrl} />
                     </Link>
                     <div className="flex flex-col gap-1 items-start justify-center">
                         <h4 className="text-small font-semibold leading-none text-default-600">{userName}</h4>

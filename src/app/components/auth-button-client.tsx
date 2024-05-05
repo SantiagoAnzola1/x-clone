@@ -1,13 +1,14 @@
 'use client'
 import { createClient } from "../../../utils/supabase/client";
 import { GitHubIcon } from "./incons";
-import { Session } from "@supabase/supabase-js";
+import { Session, User } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 import { redirect } from 'next/navigation'
 import { Database } from "./types";
-import { useEffect, useState } from "react";
+// import { signInWithGithub, signOut } from "./auth-button-server";
 
 export function AuthButton({ session }: { session: Session | null }) {
+    // export function AuthButton({ session }: { session: User | null }) {
 
     const supabase = createClient()
     const router = useRouter()
@@ -26,7 +27,7 @@ export function AuthButton({ session }: { session: Session | null }) {
         if (error) console.error(error.message)
     }
 
-    router.refresh()
+    // router.refresh()
 
     return (
         <header className="flex content-center justify-center gap-3">
